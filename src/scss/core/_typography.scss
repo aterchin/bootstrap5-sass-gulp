@@ -1,0 +1,22 @@
+h1,
+.h1 {
+  color: $headings-color;
+}
+
+a {
+  color: $link-color;
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+small,
+.small {
+  font-size: $small-font-size;
+}
+
+strong,
+.strong {
+  font-weight: $font-weight-bold;
+}

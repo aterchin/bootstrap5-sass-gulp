@@ -1,0 +1,25 @@
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  color: $body-color;
+  font-family: $font-family-base;
+  font-size: $font-size-base;
+  position: relative;
+  padding: 0;
+  margin: 0;
+  min-height: 100vh;
+}
+
+footer {
+  // Can't have abs position with stickyfooter
+  //position: absolute;
+  //width: 100%;
+  //bottom: 0;
+}
+
+main {
+  flex: 1;
+}
