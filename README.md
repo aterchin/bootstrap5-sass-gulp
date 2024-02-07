@@ -106,36 +106,15 @@ Remember, when you run `gulp clean`, EVERYTHING in `dist` will get deleted.
 - Tiny JavaScript debounce function addded for throttle window events
 - [gulp-imagemin](https://github.com/sindresorhus/gulp-imagemin) comes bundled with [optipng](https://github.com/imagemin/imagemin-optipng) but I chose to use [pngquant](https://www.npmjs.com/package/imagemin-pngquant) instead.  Found **pngquant** had FAR superior speed, quality, and filesize results.
 
-## Adding to an existing WordPress project
-
-**I would highly recommend duplicating the theme so you can compare differences with the original.  Use a plugin like [Theme Switcha](https://wordpress.org/plugins/theme-switcha/) and an incognito window for easy comparison.**  You could also create a child theme, but I might make an argument for creating a clean _new_ version from the start, versus trying to prune unused assets both at the end of the project vs at the beginning.
-
-
 #### Initial Setup
-1. Download the repo, expand zip and rename with temporary new name for theme.  I usually tack on a unique name to the new theme directory which I can find in the code easily if I need to do a search and replace. 
-2. Create a `style.css` file and copy the following
-
-```
-/*
- * Theme Name: Theme Name MMYYYY (or whatever)
- */
-```
-
-3.  Install any packages in the previous `package.json` file you want to persist in this theme.
-4.  Copy or integrate all dotfiles.  Also, copy `.env.example` to `.env` and adjust values.
-5.  Copy all images to `src/images`; remove images that came with this package.
-6.  Copy all fonts to `src/fonts`; remove fonts that came with this package.
-7.  Copy all additional packages, files, folders, or 3rd-party items that are you do **not** plan to load from npm into to `src/extra`.
-8.  Copy all views (`.php` ,`.html`, `.twig`, etc...) to mirror previous theme locations.
-9.  Copy Javascript code over to `src/js/scripts.js`, and import anything from `node_modules`.
-10. Couple options for styles: (1) update your folder structure to match this tookit or (2) copy SCSS over and replace existing folder structure.
-11. In your `functions.php` file, update the `wp_enqueue_scripts` and `wp_enqueue_styles` to reflect `dist` assets folder. Remember, if loading Bootstrap directly in the theme previously, you can now remove it.
+1.  Copy `.env.example` to `.env` and update values
+2.  Add images to `src/images`
+3.  Add fonts to `src/fonts`
+4.  Files, libraries, or items that are you do **not** plan to load from node or compile go into `src/extra`
+5.  Add custom javascript to `src/js/scripts.js`, you may use import statements.
 
 #### Cleanup/Considerations
-  - If committing `dist` directory to the repo, remove `dist` line from `.gitignore`.
   - If you're not using Axios, `npm remove axios` and delete relevant code from `scripts.js`.
-  - You might have to uninstall this version of Bootstrap if your old theme does not match this one, then reinstall an older one via npm.
   - Run `gulp build` to build out the `dist` directory initially, or run `gulp` to build again from scratch and watch for changes.
-  - Strive for consistency. When you are copying SCSS files over, you might want to spend the time to match the folder structure and filenames from this toolkit. These were created from commonly used conventions which apply to many sites.
 
   
