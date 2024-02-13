@@ -62,6 +62,7 @@ $theme-colors: map-merge($theme-colors, $custom-colors);
 @import 'core/utility';
 
 // Components
+@import 'components/button';
 
 // Layout
 

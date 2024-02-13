@@ -26,13 +26,13 @@ $black: #000000;
 $light: $white;
 $dark: #2d2d2d;
 
-$primary: lighten($color-sage, 15%);
-$secondary: lighten($color-juniper, 15%);
+$primary: $color-juniper;
+//$secondary: $color-yukon-gold;
 
 $body-color: $dark;
 $body-bg: $white;
 
-$headings-color: darken($secondary, 10%);
+$headings-color: darken($color-sage, 10%);
 $link-color: mix(black, $primary, 50%);
 
 // Borders
@@ -82,3 +82,5 @@ $spacers: (
   5: $spacer * 3,
   6: $spacer * 5
 );
+
+

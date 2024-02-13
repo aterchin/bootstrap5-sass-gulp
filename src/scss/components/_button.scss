@@ -1,0 +1,8 @@
+.btn-primary {
+   @include button-variant($color-potters-clay, $color-potters-clay);
+}
+
+.btn-outline-primary {
+  @include button-outline-variant($color-potters-clay);
+}
+
